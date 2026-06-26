@@ -88,12 +88,12 @@ find / -name "mitnick*" 2>/dev/null
 awk '{print $1}' /var/log/mitnick.log | sort -u | wc -l
 ```
 **sort note:** 
-sort only sorts by line left to right
-sort -u =sort the uniq line (left out dplicated line but contains 1st time seen, left out 2nd and more repeat)
-wc= word count; 
-  when done file like $wc file.txt it will show 1. line count 2. word count 3. byte 4. filename
-  when done with sort= ... sort | wc     =>  3 cloumn summary - line word, byte
-  when done with sort= ... sort | wc -l  =>  only summary of line i.e line count only
+- sort only sorts by line left to right
+- sort -u =sort the uniq line (left out dplicated line but contains 1st time seen, left out 2nd and more repeat)
+- wc= word count; 
+  - when done file like $wc file.txt it will show 1. line count 2. word count 3. byte 4. filename
+  - when done with sort= ... sort | wc     =>  3 cloumn summary - line word, byte
+  - when done with sort= ... sort | wc -l  =>  only summary of line i.e line count only
   
 
 **Expected Answer:** `102` (this is the password for the ZIP file)
