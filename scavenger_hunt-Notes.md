@@ -87,7 +87,7 @@ find / -name "mitnick*" 2>/dev/null
 ```bash
 awk '{print $1}' /var/log/mitnick.log | sort -u | wc -l
 ```
-# sort note
+**sort note:** 
 sort only sorts by line left to right
 sort -u =sort the uniq line (left out dplicated line but contains 1st time seen, left out 2nd and more repeat)
 wc= word count; 
