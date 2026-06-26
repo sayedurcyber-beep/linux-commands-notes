@@ -397,3 +397,38 @@ unzip -l file.zip                  # List ZIP contents
 less file                          # Open file in pager
 !command                           # Execute command from within less
 ```
+
+
+## Addiitonal resources
+
+```
+#!/bin/bash
+width=72
+for i in ${0}; do
+    lines="$(wc -l < $1 | sed 's/ //g')"
+    chars="$(wc -c < $1 | sed 's/ //g')"
+    owner="$(ls -ld $1 | awk '{print $3}')"
+    echo "-----------------------------------------------------------------"
+    echo "File $1 ($lines lines, $chars characters, owned by $owner):"
+    echo -e "-----------------------------------------------------------------\n"
+    file=$(cat /var/tmp/5galf)
+        if [ ${#file} -gt $width ]; then
+        echo "$file" | fmt | sed -e '$s/^/  /' -e '2,$s/^/+ /'
+        else
+        echo "  $file"
+        fi
+    echo "-----------------------------------------------------------------"
+done
+```
+
+```
+while IFS= read -r pass; do
+  result=$(echo "$pass" | su mitnick -c "whoami" 2>/dev/null)
+  if [ "$result" = "mitnick" ]; then
+    echo "SUCCESS! Password is: $pass"
+    break
+  else
+    echo "Failed: $pass"
+  fi
+done < /home/student/Desktop/.pass_list.txt
+```
